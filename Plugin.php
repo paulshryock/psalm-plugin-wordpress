@@ -464,7 +464,7 @@ class Plugin implements
 			return '{$variable}';
 		}
 
-		if ( $arg instanceof PhpParser\Node\Expr\ArrayDimFetch ) {
+		if ( $arg instanceof PhpParser\Node\Expr\ArrayDimFetch && $arg->dim instanceof PhpParser\Node\Expr ) {
 			$key_hook_name = static::getDynamicHookName( $arg->dim );
 			if ( is_null( $key_hook_name ) ) {
 				throw new UnexpectedValueException( 'Unsupported dynamic hook name with key type ' . get_class( $arg->dim ), 0 );
