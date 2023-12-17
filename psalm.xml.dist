@@ -1,8 +1,17 @@
 <?xml version="1.0"?>
 <psalm
-	xmlns="https://getpsalm.org/schema/config"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="https://getpsalm.org/schema/config"
 	xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+	name="psalm-plugin-wordpress"
+	errorLevel="1"
+	compressor="off"
+	phpVersion="7.4"
+	memoizeMethodCallResults="true"
+	findUnusedVariablesAndParams="true"
+	findUnusedPsalmSuppress="true"
+	findUnusedBaselineEntry="true"
+	findUnusedCode="true"
 >
 	<projectFiles>
 		<file name="./test.php" />
