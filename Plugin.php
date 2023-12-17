@@ -505,7 +505,7 @@ class Plugin implements
 		$dynamic_hook_names = preg_grep( '/{\$/', $all_hook_names );
 
 		// normalize variable name length, to ensure longer variable names don't cause wrong sorting leading to incorrect replacements later on
-		$normalized_dynamic_hook_names = preg_replace( '/{(?:[^{}]+|(?R))*+}/', '{$abc}', $dynamic_hook_names );
+		$normalized_dynamic_hook_names = preg_replace( '/{(?:[^{}]+|(?R))*+}/', '{$abc}', $dynamic_hook_names ) ?? [];
 
 		$dynamic_hook_names = array_combine( $dynamic_hook_names, $normalized_dynamic_hook_names );
 
