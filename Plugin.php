@@ -378,7 +378,7 @@ class Plugin implements
 	public static function getDynamicHookName( object $arg ) : ?string {
 		// variable or 'foo' . $bar variable hook name
 		// "foo_{$my_var}_bar" is the wp-hooks-generator style, we need to mimic
-		if ( $arg instanceof Variable ) {
+		if ( $arg instanceof Variable && is_string( $arg->name ) ) {
 			return '{$' . $arg->name . '}';
 		}
 
